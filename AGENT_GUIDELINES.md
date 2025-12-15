@@ -76,6 +76,47 @@ When you notice gaps, suggest introducing:
 
 ---
 
+## Automation-First Project Design
+
+### Eliminate Manual Intervention
+Design projects to be agent-friendly and newcomer-friendly:
+
+**Bad - Requires human intervention:**
+- "Run the server, then manually create admin user in UI"
+- "Execute migration script, then update config file with new IDs"
+- Multi-step setup with manual confirmations
+- README with 10 steps to get started
+
+**Good - Programmatically accessible:**
+- Single command to start: `npm run dev` or `make start`
+- Single command to test: `npm test` or `make test`
+- Migrations run automatically on startup or via explicit command
+- Seed data created programmatically
+- All setup in code, not manual steps
+
+### Examples
+```bash
+# One-liner setup and start
+npm install && npm run dev
+
+# Or with make
+make setup && make dev
+
+# Tests should be equally simple
+npm test
+```
+
+### Design Principles
+- **Idempotent operations**: Safe to run multiple times
+- **Explicit commands**: Each task has a clear command (dev, test, migrate, seed)
+- **Zero manual steps**: No "then go to browser and click..."
+- **Agent-friendly**: Everything scriptable and automatable
+- **Self-contained**: Project bootstraps itself from code
+
+When proposing solutions, ask: "Can an agent run this without human intervention?"
+
+---
+
 ## Decision-Making Values
 
 ### Simplicity
