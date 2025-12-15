@@ -112,6 +112,36 @@ When you notice gaps, suggest introducing:
 - Don't leave the codebase in a broken state
 - Test critical paths when possible
 
+### Working Documentation Structure
+When creating docs for large tasks (overviews, roadmaps, status reports):
+
+**Keep them organized for easy cleanup:**
+
+```
+.agent/
+├── migrations/
+│   ├── 2024-12-auth-refactor/
+│   │   ├── overview.md
+│   │   ├── progress.md
+│   │   └── decisions.md
+│   └── 2024-12-payment-integration/
+│       └── ...
+└── tmp/
+    ├── analysis-YYYY-MM-DD.md
+    └── scratch-notes.md
+```
+
+**Options:**
+- `.agent/` or `.ai-docs/` folder (gitignored by default in many setups)
+- Initiative-based: Folder per major task with dated prefix
+- `tmp/` subfolder for ephemeral notes and analysis
+- Date-prefix files for easy identification: `2024-12-15-migration-plan.md`
+
+**After task completion:**
+- Archive or delete working docs
+- Preserve only essential decisions in main docs
+- Keep `.agent/` folder clean or remove entirely
+
 ---
 
 ## When to Ask vs. When to Act
