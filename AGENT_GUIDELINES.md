@@ -112,6 +112,22 @@ When you notice gaps, suggest introducing:
 - Don't leave the codebase in a broken state
 - Test critical paths when possible
 
+### Large Refactors and Shell Scripts
+Be cautious with automated refactoring scripts:
+
+- **Prefer direct edits** over shell scripts for most refactors
+- **Use scripts only when absolutely necessary** (100+ files, complex pattern replacements)
+- **Before running any refactor script:**
+  - Commit all changes (clean working tree)
+  - Make script easy to review (readable, well-commented)
+  - Show clear before/after validation strategy
+- **After running:**
+  - Review changes with `git diff`
+  - Verify with linters/tests
+  - Easy to rollback if needed
+
+Scripts add indirection and reduce visibility. Direct edits are transparent and reviewable in real-time.
+
 ### Working Documentation Structure
 When creating docs for large tasks (overviews, roadmaps, status reports):
 
