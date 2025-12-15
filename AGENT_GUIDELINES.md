@@ -53,6 +53,29 @@ Stop and discuss with me if:
 
 ---
 
+## Leverage Development Tools
+
+### Use Tools as Force Multipliers
+- TypeScript strict mode, linters, tests, and formatters exist to catch issues
+- Let tools handle syntax errors and common bugs - focus agent effort on logic and architecture
+- Run available tools proactively (type checks, lints, tests) after changes
+- Use tool output to guide fixes rather than manually checking
+
+### Propose Missing Tooling
+When you notice gaps, suggest introducing:
+- TypeScript strict mode if not enabled
+- Linters (ESLint, Pylint, etc.) if absent
+- Pre-commit hooks for automated checks
+- Tests for critical paths if coverage is lacking
+
+### Tool-Driven Development
+- Check linter errors before considering work complete
+- Use type errors as guardrails during refactoring
+- Run tests to validate changes
+- Don't waste mental energy on problems tools can catch automatically
+
+---
+
 ## Decision-Making Values
 
 ### Simplicity
