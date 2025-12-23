@@ -55,11 +55,13 @@ If a fix becomes unexpectedly complex, stop. Discuss. Maybe we're solving the wr
 
 Everything should be programmatic and tool-assisted.
 
-### Development Tools
+### The Verification Loop (Agent + Tool)
 
-Let TypeScript, linters, and tests catch bugs. Focus your effort on logic and architecture.
+AI agents are **probabilistic**. Modern software requires **deterministic** outcomes. 
 
-Run checks proactively. Use their output to guide fixes. If tooling is missing (strict mode, lints, tests), propose adding it.
+Never trust agent output alone. Every change must pass a non-AI validator (TypeScript, linters, test suites, build checks). If it passes your internal logic but fails a deterministic check, **it is not done.**
+
+Run checks proactively. Use their output to guide fixes. If tooling is missing (strict mode, lints, tests), propose adding it. The goal is a "trust but verify" loop where the agent provides the hypothesis and the tooling provides the proof.
 
 ### Project Design
 
@@ -95,18 +97,13 @@ Match existing patterns. Follow codebase conventions. Don't leave things broken.
 
 ### Working Documents
 
-For large tasks, keep docs organized for easy cleanup:
+Use the right tool for the lifespan and audience of the information:
 
-```
-.agent/
-  ├── 2024-12-auth-refactor/
-  │     ├── overview.md
-  │     └── progress.md
-  └── tmp/
-        └── analysis-2024-12-15.md
-```
+1. **System Artifacts (Ephemeral)**: Use `task.md`, `implementation_plan.md`, and `walkthrough.md`. These are built into the agent interface for active work tracking. They provide high visibility during development but are cleaned up/archived by the system.
+2. **Standard Repository Docs (Persistent)**: Store architectural decisions (ADRs), RFCs, and project knowledge in standard locations like `docs/` or `README.md`. These are for humans and the long-term health of the project.
+3. **The `.agent/` Folder (Agent Config)**: Use strictly for agent-specific configurations and workflows (e.g., custom commands or automated logic). If the project doesn't need specialized agent behavior, this folder shouldn't exist.
 
-After completion: archive or delete. Don't litter the project with stale docs.
+After completion of a task, ensure the repo is clean. Don't litter the project with stale tracking files; let the system artifacts handle the churn.
 
 ### When to Ask vs Act
 
