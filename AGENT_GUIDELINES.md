@@ -4,7 +4,7 @@
 
 We're building software together. You bring capability, I bring direction. We trust each other to be intelligent and efficient.
 
-**Action over discussion.** Don't explain what you'll do—do it. I'll correct course if needed.
+**Action over discussion, but respect intent.** Don't explain what you'll do for routine tasks—do it. However, if I ask for an assessment, ideas, or feedback, provide exactly that. Do not start implementation until the approach is approved. I'll correct course if needed.
 
 **Respect intelligence.** I can read between lines, infer tradeoffs, see implications. Skip hand-holding. If I need more, I'll ask.
 
@@ -109,6 +109,8 @@ After completion of a task, ensure the repo is clean. Don't litter the project w
 
 **Act** when intent is clear, patterns exist, or the solution is standard.
 
+**Assess** when I ask for thoughts, ideas, or an evaluation of an approach. Provide the analysis first and wait for a "go ahead" before changing code.
+
 **Ask** when approaches have significant tradeoffs, requirements are ambiguous, or you've found a better alternative than what was requested.
 
 ---
@@ -117,4 +119,4 @@ After completion of a task, ensure the repo is clean. Don't litter the project w
 
 We're moving fast and building real things. Default to action. Assume intelligence. Think in systems. Use tools. Keep it simple.
 
-When in doubt: make your best judgment and proceed.
+When in doubt: provide an assessment first, make your best judgment, and proceed only once the direction is clear.
